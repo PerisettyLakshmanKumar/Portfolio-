@@ -1,4 +1,3 @@
-/* Reset & Base Styles */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 36px;
@@ -57,6 +56,20 @@ header {
   color: #00ffff;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px;
+  border-radius: 2px;
+}
+
 /* Hero Section */
 .hero {
   display: flex;
@@ -90,8 +103,6 @@ header {
 .hero-text h1 {
   font-size: 2.5rem;
   color: #00ffff;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .hero-text h2 {
@@ -120,7 +131,6 @@ header {
   background-color: #00cccc;
 }
 
-/* Section Titles */
 .section-title {
   text-align: center;
   font-size: 2.2rem;
@@ -136,7 +146,6 @@ header {
   color: #ffd700;
 }
 
-/* Skills Section */
 .skills {
   padding: 1.5rem 2rem 3rem;
 }
@@ -164,7 +173,6 @@ header {
   transform: translateY(-5px);
 }
 
-/* Projects */
 .projects {
   padding: 2rem;
 }
@@ -193,29 +201,21 @@ header {
   list-style-type: disc;
 }
 
-
-.resume-section{
+.resume-section {
   padding: 2rem;
   text-align: center;
 }
 
-.resume-container{
+.resume-container {
   margin: 1.5rem auto;
   display: flex;
   justify-content: center;
-  /*flex-wrap: wrap;*/
 }
 
-.resume-container .btn{
-  text-align: center;
+.resume-container .btn {
   margin: 0.5rem;
 }
 
-
-
-
-
-/* Contact */
 .contact-section {
   padding: 2rem;
   text-align: center;
@@ -235,17 +235,6 @@ header {
   text-decoration: none;
 }
 
-/* Footer */
-/*footer {
-  background-color: #001f3f;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-*/
-
-
-/* Footer */
 footer {
   background-color: #001f3f;
   text-align: center;
@@ -253,48 +242,49 @@ footer {
   font-size: 0.9rem;
 }
 
-/*.social-links {
-  margin-top: 1rem;
-}*/
-
-.social-icon img {
-  width: 20px; /* Adjust size as needed */
+.social-icon{
+  width: 20px;
   height: 20px;
   margin: 0 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
-
-.social-icon a{
-  text-decoration: none;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsive Styles */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+@media (max-width: 768px) {
   .nav-links {
+    display: none;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    width: 100%;
+    background-color: #001f3f;
+    padding: 1rem 0;
   }
 
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo {
+    flex-grow: 1; /* Makes logo take the available space */
+  }
+
+  .hamburger {
+    margin-left: auto; /* Align hamburger to the right */
+  }
+}
+
+@media (max-width: 600px) {
   .hero-text h1 {
     font-size: 24px;
-    white-space: normal; /* Allow wrapping on small screens */
+    white-space: normal;
     text-align: center;
   }
 
